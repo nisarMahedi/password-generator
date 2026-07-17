@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="card">
+    <div class="card-body">
+
+        <h2>Password Generator</h2>
+
+        <div id="choiceScreen">
+            <p class="choice-text">
+                How would you like to get your password?
+            </p>
+
+            <button class="btn btn-primary w-100 mb-3" id="suggestBtn">
+                Suggest a strong password
+            </button>
+
+            <button class="btn btn-outline-primary w-100" id="chooseOwnBtn">
+                Choose your own
+            </button>
+        </div>
+
+        <div id="customForm" style="display:none;">
+
+            <label class="form-label" for="lengthRange">
+                Length:
+                <span id="lengthValue">16</span>
+            </label>
+
+            <input
+                type="range"
+                class="form-range mb-3"
+                min="8"
+                max="64"
+                value="16"
+                id="lengthRange">
+
+            <h5>Include</h5>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="uppercase">
+                <label class="form-check-label" for="uppercase">
+                    Uppercase letters (A-Z)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="lowercase">
+                <label class="form-check-label" for="lowercase">
+                    Lowercase letters (a-z)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="numbers">
+                <label class="form-check-label" for="numbers">
+                    Numbers (0-9)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="symbols">
+                <label class="form-check-label" for="symbols">
+                    Symbols (!@#$%)
+                </label>
+            </div>
+
+            <button class="btn btn-primary w-100 mt-3" id="generateBtn">
+                Generate password
+            </button>
+
+        </div>
+
+        <div id="outputSection">
+
+            <h5>Your password</h5>
+
+            <div class="input-group">
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="passwordOutput"
+                    readonly
+                    value="">
+
+                <button
+                    class="copy-btn"
+                    id="copyBtn"
+                    aria-label="Copy to clipboard">
+
+                    <svg class="icon-copy"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+
+                    </svg>
+
+                    <svg class="icon-check"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <polyline points="20 6 9 17 4 12"></polyline>
+
+                    </svg>
+
+                    <span class="copy-tooltip" id="copyTooltip">
+                        Copy to clipboard
+                    </span>
+
+                </button>
+
+            </div>
+
+            <div id="strengthWrap">
+
+                <div class="strength-bar">
+                    <div class="strength-bar-fill" id="strengthFill"></div>
+                </div>
+
+                <div class="strength-label">
+                    Strength:
+                    <span id="strengthText">-</span>
+                </div>
+
+            </div>
+
+            <button class="btn btn-link p-0 mt-3" id="startOverBtn">
+                Start over
+            </button>
+
+        </div>
+
+        <div class="footer-credit">
+            Made with
+            <span class="heart">&#10084;</span>
+            by
+            <a href="https://www.linkedin.com/in/nisar-mahedi/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Nisar Mahedi
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
